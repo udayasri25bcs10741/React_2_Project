@@ -6,8 +6,7 @@ A modern React-based productivity application designed to help students **organi
 
 ## 🌐 Live Demo
 
-👉 [https://react-2-project-ruby.vercel.app/dashboard](https://react-2-project-ruby.vercel.app/dashboard)
-
+https://studycompanion12.netlify.app/dashboard
 ---
 
 ## 🚀 Features
