@@ -1,0 +1,107 @@
+/* ── Completion ring ─────────────────────────── */
+.dash-completion-hero { display: flex; align-items: center; justify-content: center; }
+.dash-completion-ring {
+  position: relative; width: 90px; height: 90px;
+  display: flex; align-items: center; justify-content: center;
+}
+.dash-ring-svg {
+  width: 90px; height: 90px;
+  filter: drop-shadow(0 0 12px rgba(124,92,252,0.4));
+}
+.dash-ring-label {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.dash-ring-pct { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--accent-light); line-height: 1; }
+.dash-ring-sub  { font-size: 0.65rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ── Quote ───────────────────────────────────── */
+.dash-quote {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 1rem;
+  background: linear-gradient(135deg, rgba(124,92,252,0.1) 0%, rgba(168,85,247,0.06) 100%);
+  border: 1px solid rgba(124,92,252,0.2);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.dash-quote-glow {
+  position: absolute; left: -20px; top: -20px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,92,252,0.3), transparent 70%);
+  pointer-events: none;
+}
+.dash-quote-icon { font-size: 2.2rem; color: var(--accent); flex-shrink: 0; opacity: 0.7; }
+.dash-quote-content { flex: 1; min-width: 0; }
+.dash-quote-text { font-size: 0.9rem; color: var(--text-primary); line-height: 1.65; font-style: italic; }
+.dash-quote-author { font-size: 0.78rem; color: var(--accent-light); margin-top: 0.3rem; font-weight: 600; }
+.dash-quote-bolt { font-size: 1.8rem; color: var(--accent-light); opacity: 0.25; flex-shrink: 0; }
+
+/* ── Premium stat cards ──────────────────────── */
+.stat-card-premium {
+  position: relative; overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+  cursor: default;
+}
+.stat-card-premium:hover {
+  border-color: var(--card-bg, var(--accent));
+  box-shadow: 0 0 0 1px var(--card-bg, var(--accent)), 0 8px 32px rgba(0,0,0,0.5), 0 0 32px var(--card-glow, rgba(124,92,252,0.2));
+}
+.stat-card-bg-circle {
+  position: absolute; top: -28px; right: -28px;
+  width: 90px; height: 90px; border-radius: 50%;
+  background: var(--card-bg, var(--accent));
+  opacity: 0.07; transition: var(--transition);
+}
+.stat-card-premium:hover .stat-card-bg-circle { opacity: 0.14; transform: scale(1.2); }
+
+.stat-card-icon-wrap {
+  width: 40px; height: 40px; border-radius: var(--radius-xs);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stat-card-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.3rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em;
+}
+.stat-card-label {
+  font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* ── Charts ──────────────────────────────────── */
+.dash-charts-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;
+}
+@media (max-width: 960px) { .dash-charts-row { grid-template-columns: 1fr; } }
+
+.dash-chart-card { flex: 1; }
+.dash-chart-header { margin-bottom: 0.75rem; }
+.dash-chart-title {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.95rem; font-weight: 700; color: var(--text-primary);
+}
+
+/* ── Subject breakdown ───────────────────────── */
+.dash-subject-breakdown { display: flex; flex-direction: column; gap: 0.85rem; }
+.dash-subject-row {
+  display: grid;
+  grid-template-columns: 14px 160px 1fr 80px 46px;
+  gap: 0.85rem; align-items: center;
+}
+.dash-subject-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.dash-subject-name { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dash-subject-bar-wrap { flex: 1; }
+.dash-subject-stat { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; text-align: right; }
+.dash-subject-pct { font-size: 0.85rem; font-weight: 800; font-family: 'Sora', sans-serif; text-align: right; }
+
+@media (max-width: 640px) {
+  .dash-subject-row { grid-template-columns: 14px 1fr auto; }
+  .dash-subject-bar-wrap, .dash-subject-pct { display: none; }
+}

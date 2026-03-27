@@ -1,0 +1,82 @@
+.revision-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+@media (max-width: 1024px) { .revision-layout { grid-template-columns: 1fr; } }
+
+.revision-calendar-card { min-width: 0; }
+
+/* Override react-calendar styles */
+.study-calendar {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: 'Inter', sans-serif !important;
+  color: var(--text-primary) !important;
+}
+.study-calendar .react-calendar__navigation button {
+  color: var(--text-primary) !important;
+  background: none !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: inherit !important;
+}
+.study-calendar .react-calendar__navigation button:hover {
+  background: var(--bg-hover) !important;
+}
+.study-calendar .react-calendar__tile {
+  color: var(--text-secondary) !important;
+  background: none !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: inherit !important;
+  font-size: 0.82rem !important;
+  padding: 0.6rem 0.4rem !important;
+}
+.study-calendar .react-calendar__tile:hover {
+  background: var(--bg-hover) !important;
+  color: var(--text-primary) !important;
+}
+.study-calendar .react-calendar__tile--active,
+.study-calendar .react-calendar__tile--active:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+  box-shadow: 0 0 10px var(--accent-glow) !important;
+}
+.study-calendar .react-calendar__tile--now {
+  background: var(--accent-dim) !important;
+  color: var(--accent-light) !important;
+}
+.study-calendar .has-revision::after {
+  content: '●';
+  display: block;
+  font-size: 0.4rem;
+  color: var(--yellow);
+  margin-top: -4px;
+}
+.study-calendar .react-calendar__month-view__days__day--weekend {
+  color: var(--red) !important;
+}
+.study-calendar abbr { text-decoration: none !important; }
+
+.revision-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.revision-legend-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.revision-date-preview {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.revision-lists-col { display: flex; flex-direction: column; gap: 0; }

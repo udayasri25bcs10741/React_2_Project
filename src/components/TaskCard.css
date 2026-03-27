@@ -1,0 +1,47 @@
+.task-card {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+.task-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: transparent; transition: var(--transition);
+  border-radius: 0 4px 4px 0;
+}
+.task-card:hover { border-color: var(--border-bright); transform: translateX(3px); }
+.task-card:hover::before { background: var(--grad-purple); }
+.task-card.completed { opacity: 0.5; }
+.task-card.overdue { border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.03); }
+.task-card.overdue::before { background: var(--grad-red); }
+
+.task-card-left { flex-shrink: 0; }
+.task-check-btn {
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; padding: 0.2rem; border-radius: 50%;
+  transition: var(--transition);
+}
+.task-check-btn:hover { background: var(--bg-hover); transform: scale(1.1); }
+
+.task-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+.task-header { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; }
+.task-title { font-size: 0.925rem; font-weight: 600; word-break: break-word; }
+.done-strikethrough { text-decoration: line-through; color: var(--text-muted); }
+.task-badges { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+
+.task-meta { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.task-meta-item {
+  font-size: 0.76rem; color: var(--text-secondary);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 0.12rem 0.55rem; border-radius: var(--radius-full);
+}
+.task-deadline { display: flex; align-items: center; gap: 0.3rem; font-size: 0.76rem; color: var(--text-muted); }
+.task-deadline.red { color: var(--red); }
+.task-deadline.yellow { color: var(--yellow); }
+
+.task-card-actions { display: flex; align-items: center; gap: 0.2rem; flex-shrink: 0; }

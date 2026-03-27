@@ -1,0 +1,33 @@
+.revision-list { display: flex; flex-direction: column; gap: 0.55rem; }
+
+.revision-item {
+  display: flex; align-items: center; gap: 0.85rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  transition: var(--transition);
+}
+.revision-item:hover { border-color: var(--border-bright); background: var(--bg-hover); }
+.revision-item.done { opacity: 0.4; }
+.revision-item.overdue { border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.04); }
+
+.revision-item-left { flex-shrink: 0; }
+.revision-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+.revision-item-body { flex: 1; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; min-width: 0; }
+.revision-topic { font-size: 0.875rem; font-weight: 600; }
+.revision-subject {
+  font-size: 0.72rem; color: var(--text-secondary);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.5rem; border-radius: var(--radius-full);
+}
+.revision-date {
+  display: flex; align-items: center; gap: 0.3rem;
+  font-size: 0.72rem; color: var(--text-muted);
+  margin-left: auto;
+}
+.revision-item-actions { display: flex; align-items: center; gap: 0.35rem; flex-shrink: 0; }
